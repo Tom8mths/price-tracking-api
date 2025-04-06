@@ -34,15 +34,15 @@ Clone the repository:
 git clone https://github.com/Tom8mths/price-tracking-api.git
 cd price-tracking-api
 ```
-# App Port
+### App Port
 PORT=3000
 
-### Start the development server
+# Start the development server
 
 npm run dev
-# or
+### or
 yarn dev
 
-# The api will be available at:
+### The api will be available at:
 
 http://localhost:3000/
