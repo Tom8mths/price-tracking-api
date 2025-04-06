@@ -23,7 +23,6 @@ Make sure you have the following installed:
 
 - Node.js (v18 or higher)
 - npm or yarn
-- A PostgreSQL database (or other, if configured)
 
 ---
 
