@@ -32,7 +32,7 @@ export const register = async (req: Request, res: Response): Promise<void> => {
   const { username, email, password } = req.body;
 
   const existing = users.find(user => user.email === email);
-  if (existing) res.status(400).json({ message: "User already exists" });
+  if (existing) res.status(400).json({ message: "Email already in use" });
 
   const hashedPassword = await bcrypt.hash(password, 10);
   const user = { username: username, id: users.length + 1, email, password: hashedPassword };
