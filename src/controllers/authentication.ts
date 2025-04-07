@@ -16,7 +16,6 @@ const users: User[] = [];
 
 export const login = async (req: Request, res: Response): Promise<void> => {
   const { email, password } = req.body;
-
   const user = users.find(user => user.email === email);
   if (!user) res.status(401).json({ message: "Invalid credentials" });
 
