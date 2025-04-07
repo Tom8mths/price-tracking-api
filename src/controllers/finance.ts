@@ -1,14 +1,12 @@
 import { Request, Response } from 'express';
 
-const fetch = (...args: any) =>
-  import('node-fetch').then(({ default: fetch }) => fetch(...args));
+import fetch, { RequestInfo, RequestInit } from 'node-fetch';
 
-const API_URL = 'https://api.hgbrasil.com/finance';
-const API_KEY = process.env.API_KEY as string;
+const fetchWrapper = (...args: [RequestInfo, RequestInit?]) => fetch(...args);
 
 export const getQuotes = async (req: Request, res: Response): Promise<void> => {
   try {
-    const response = await fetch(`${API_URL}?key=${API_KEY}`);
+    const response = await fetchWrapper(`https://api.hgbrasil.com/finance?key=${process.env.API_KEY}`);
     const data = await response.json();
     res.json(data);
   } catch (err) {
